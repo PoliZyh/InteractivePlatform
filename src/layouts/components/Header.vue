@@ -4,8 +4,10 @@
             <img src="../../assets/images/logo.png" alt="">
             <div class="navs">
                 <nav>
-                    <div class="nav-item" v-for="route in constantRoutes[0].children"
-                    :key="route.path">
+                    <div class="nav-item" 
+                    v-for="route in constantRoutes[0].children"
+                    :key="route.path"
+                    @click="handleRouter(route.path)">
                     {{ route.meta.title }}
                     </div>
                 </nav>
@@ -19,6 +21,14 @@
 <script setup>
 import { onMounted } from 'vue';
 import { constantRoutes } from '../../router/routes';
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
+
+
+const handleRouter = (path) => {
+    router.push(path)
+}
 
 
 onMounted(() => {

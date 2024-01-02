@@ -22,22 +22,22 @@ export const constantRoutes = [
                     title: '大会议程'
                 }
             },
-            {
-                path: 'about',
-                name: 'about',
-                component: () => import('@/views/About/index.vue'),
-                meta: {
-                    title: '关于大会'
-                }
-            },
-            {
-                path: 'experts',
-                name: 'experts',
-                component: () => import('@/views/Experts/index.vue'),
-                meta: {
-                    title: '大咖云集'
-                }
-            },
+            // {
+            //     path: 'about',
+            //     name: 'about',
+            //     component: () => import('@/views/About/index.vue'),
+            //     meta: {
+            //         title: '关于大会'
+            //     }
+            // },
+            // {
+            //     path: 'experts',
+            //     name: 'experts',
+            //     component: () => import('@/views/Experts/index.vue'),
+            //     meta: {
+            //         title: '大咖云集'
+            //     }
+            // },
             {
                 path: 'activity',
                 name: 'activity',
@@ -70,14 +70,14 @@ export const constantRoutes = [
                     title: '媒体中心'
                 }
             },
-            {
-                path: 'guide',
-                name: 'guide',
-                component: () => import('@/views/Guide/index.vue'),
-                meta: {
-                    title: '参会指南'
-                }
-            },
+            // {
+            //     path: 'guide',
+            //     name: 'guide',
+            //     component: () => import('@/views/Guide/index.vue'),
+            //     meta: {
+            //         title: '参会指南'
+            //     }
+            // },
             {
                 path: 'live',
                 name: 'live',
@@ -85,6 +85,18 @@ export const constantRoutes = [
                 meta: {
                     title: '大会直播'
                 }
+            }
+        ]
+    },
+    {
+        path: '/lay',
+        name: 'lay',
+        component: () => import('@/layouts/index.vue'),
+        children: [
+            {
+                path: 'clock-in',
+                name: 'clock-in',
+                component: () => import('@/views/ClockIn/index.vue')
             }
         ]
     }
