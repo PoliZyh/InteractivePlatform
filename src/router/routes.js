@@ -97,6 +97,11 @@ export const constantRoutes = [
                 path: 'clock-in',
                 name: 'clock-in',
                 component: () => import('@/views/ClockIn/index.vue')
+            },
+            {
+                path: 'clock-in-hand',
+                name: 'clock-in-hand',
+                component: () => import('@/views/ClockIn/HandTrack.vue')
             }
         ]
     }

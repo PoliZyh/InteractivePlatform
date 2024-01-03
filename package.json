@@ -12,6 +12,7 @@
     "axios": "^1.6.2",
     "element-plus": "^2.4.4",
     "face-api.js": "^0.22.2",
+    "handtrackjs": "^0.1.5",
     "pinia": "^2.1.7",
     "sass": "^1.69.5",
     "vue": "^3.3.11",

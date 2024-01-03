@@ -58,6 +58,7 @@ const detectFace = async () => {
         
 
         detections.forEach(detection => {
+            // console.log(detection)
             const overlayImage = new Image();
             const leftX = detection.alignedRect.box.x;
             const targetWidth = detection.alignedRect.box.width * 1.2
