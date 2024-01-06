@@ -13,6 +13,8 @@
 
 <style scoped lang="scss">
 .main-box {
+    padding-top: $layout-header-height;
     font-size: .2667rem;
+    min-height: 100%;
 }
 </style>

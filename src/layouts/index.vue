@@ -20,5 +20,10 @@ import Main from './components/Main.vue';
 <style scoped lang="scss">
 .layout-box {
     @include cover;
+    .main {
+        width: 100%;
+        height: calc(100vh - $layout-header-height);
+        min-height: calc(100vh - $layout-header-height);
+    }
 }
 </style>

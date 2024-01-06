@@ -7,7 +7,7 @@
                     <div class="nav-item" 
                     v-for="route in constantRoutes[0].children"
                     :key="route.path"
-                    @click="handleRouter(route.path)">
+                    @click="handleRouter(route.name)">
                     {{ route.meta.title }}
                     </div>
                 </nav>
@@ -26,8 +26,8 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 
 
-const handleRouter = (path) => {
-    router.push(path)
+const handleRouter = (name) => {
+    router.push({name})
 }
 
 
@@ -44,6 +44,9 @@ onMounted(() => {
     height: $layout-header-height;
     border-bottom: .0167rem solid $layout-border-color;
     font-size: .25rem;
+    position: fixed;
+    z-index: 1000;
+    background-color: white;
     .header__row {
         width: 80%;
         height: 100%;

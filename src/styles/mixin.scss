@@ -4,3 +4,9 @@
     width: 100%;
     height: 100%;
 }
+
+@mixin linear-txt {
+    background: linear-gradient(to right, $theme-color-blue, $theme-color-green); /*设置渐变的方向从左到右 颜色从ff0000到ffff00*/
+    -webkit-background-clip: text;/*将设置的背景颜色限制在文字中*/
+    -webkit-text-fill-color: transparent;/*给文字设置成透明*/
+}

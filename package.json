@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/core": "^10.7.1",
+    "animate.css": "^4.1.1",
     "axios": "^1.6.2",
     "element-plus": "^2.4.4",
     "face-api.js": "^0.22.2",
@@ -16,12 +18,14 @@
     "pinia": "^2.1.7",
     "sass": "^1.69.5",
     "vue": "^3.3.11",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "wow.js": "^1.2.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
     "unplugin-auto-import": "^0.17.2",
     "unplugin-vue-components": "^0.26.0",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "wowjs": "^1.1.3"
   }
 }
