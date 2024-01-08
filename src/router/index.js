@@ -7,7 +7,12 @@ import {
 
 const router = createRouter({
     history: createWebHashHistory(),
-    routes: constantRoutes
+    routes: constantRoutes,
+    scrollBehavior: (to, from, savedPosition) => {
+        return {
+            top: 0
+        }
+    }
 })
 
 

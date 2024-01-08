@@ -4,6 +4,7 @@
         <div class="container-item">
             <div class="ca sc-item">
                 <div class="ca-header header">
+                    <div class="circle wow fadeIn" data-wow-delay="0.2s"></div>
                     <div class="fir ca-header-item wow fadeInLeft " data-wow-delay="0s">
                         <p class="title">大会议程</p>
                         <p class="title-en">Conference Agenda</p>
@@ -95,17 +96,18 @@
         <div class="container-item">
             <div class="ch sc-item">
                 <div class="ch-header header">
+                    <div class="circle wow fadeIn" data-wow-delay="0.2s"></div>
                     <div class="ch-header-item header-item wow fadeInDown" data-wow-delay="0.2s">
-                        <span>更前沿</span>
+                        <span><span>更</span>前沿</span>
                     </div>
                     <div class="ch-header-item header-item wow fadeInDown" data-wow-delay="0.4s">
-                        <span>更精彩</span>
+                        <span><span>更</span>精彩</span>
                     </div>
                     <div class="ch-header-item header-item wow fadeInDown" data-wow-delay="0.6s">
-                        <span>更显著</span>
+                        <span><span>更</span>显著</span>
                     </div>
                     <div class="ch-header-item header-item wow fadeInDown" data-wow-delay="0.8s">
-                        <span>更热门</span>
+                        <span><span>更</span>热门</span>
                     </div>
                     <div class="last header-item ch-header-item wow fadeInRight" data-wow-delay="0s">
                         <p class="title">大会亮点</p>
@@ -280,6 +282,21 @@ onMounted(() => {
             display: flex;
             box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
             padding-right: .6667rem;
+            position: relative;
+            background-color: white;
+
+            .circle {
+                position: absolute;
+                left: 100%;
+                bottom: 100%;
+                // transform: translate(-50%, -50%);
+                transform: translate(calc(1.9667rem / -2), calc(1.9667rem / 2));
+                height: 1.9667rem;
+                width: 1.9667rem;
+                border-radius: 50%;
+                z-index: -1;
+                background: linear-gradient($theme-color-green, $theme-color-blue);
+            }
 
             .title {
                 font-size: .4833rem;
@@ -328,6 +345,14 @@ onMounted(() => {
                 cursor: pointer;
             }
         }
+
+        // .ca-header::after {
+        //     position: absolute;
+        //     left: 100%;
+        //     bottom: 100%;
+        //     content: '';
+
+        // }
 
         .ca-bodyer {
             width: 100%;
@@ -410,12 +435,26 @@ onMounted(() => {
             width: 100%;
             padding-left: .6667rem;
             position: relative;
-
+            background-color: white;
+            .circle {
+                position: absolute;
+                right: 100%;
+                bottom: 100%;
+                // transform: translate(-50%, -50%);
+                transform: translate(calc(1.9667rem / 2), calc(1.9667rem / 2));
+                height: 1.9667rem;
+                width: 1.9667rem;
+                border-radius: 50%;
+                z-index: -1;
+                background: linear-gradient($theme-color-green, $theme-color-blue);
+            }
             .last {
                 flex: 1.3 !important;
                 position: relative;
                 scale: 1.2;
                 left: 0.1667rem;
+                align-items: center !important;
+                ;
                 background-image: linear-gradient(to right, $theme-color-blue, $theme-color-green);
             }
 
@@ -445,9 +484,14 @@ onMounted(() => {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    transform: translateY(65%);
+                    transform: translateY(35%);
                     @include linear-txt;
+                    span {
+                        font-size: .5rem;
+                        transform: translateY(-10%);
+                    }
                 }
+
             }
         }
 
@@ -463,6 +507,7 @@ onMounted(() => {
                 gap: .25rem;
                 align-items: center;
                 position: relative;
+
                 div {
                     min-width: 2.5rem;
                     display: flex;
@@ -492,5 +537,4 @@ onMounted(() => {
             }
         }
     }
-}
-</style>
+}</style>

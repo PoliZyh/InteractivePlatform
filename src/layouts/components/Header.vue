@@ -32,7 +32,7 @@ const handleRouter = (name) => {
 
 
 onMounted(() => {
-    console.log(constantRoutes)
+    // console.log(constantRoutes)
 })
 
 </script>
