@@ -5,10 +5,12 @@
             <h2 class="title">全部会议</h2>
             <p class="title-re">Agendas</p>
             <div class="agenda-content">
-                <div class="ad-item" v-for="(item, index) in data" :class="index % 2 == 0 ? 'ad-item-re' : ''"
+                <div class="ad-item wow fadeInLeft" v-for="(item, index) in data" :class="index % 2 == 0 ? 'ad-item-re' : ''"
                     @mouseover="item.isExpand = true" 
                     @mouseleave="data.forEach(i => i.isExpand = false)" 
-                    :key="item.title">
+                    :key="item.title"
+                    :data-wow-delay="index / 10 + 's'"
+                    >
                     <div class="time">
                         {{ item.date }}
                     </div>
@@ -33,9 +35,23 @@
 
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import Screen from './components/Screen.vue';
+import WOW from 'wow.js'
 
+const initWOW = () => {
+    const wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 0,
+        mobile: true
+    })
+    wow.init();
+}
+
+onMounted(() => {
+    initWOW()
+})
 
 const stopP = (e) => {
     e.stopPropagation
