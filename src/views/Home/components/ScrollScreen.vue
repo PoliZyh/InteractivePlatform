@@ -263,14 +263,14 @@ onMounted(() => {
         }
 
         .title {
-            font-size: .4833rem;
+            font-size: .3833rem;
             color: white;
             font-weight: 300;
         }
 
         .title-en {
             color: white;
-            font-size: .1667rem;
+            font-size: .1467rem;
         }
     }
 
@@ -299,34 +299,43 @@ onMounted(() => {
             }
 
             .title {
-                font-size: .4833rem;
+                font-size: .3833rem;
                 color: white;
                 font-weight: 300;
             }
 
             .title-en {
                 color: white;
-                font-size: .1667rem;
+                font-size: .1467rem;
             }
 
             .fir {
                 flex: 1.3 !important;
                 position: relative;
                 scale: 1.2;
-                left: -0.1667rem;
+                left: 0.1667rem;
+                @include clip-path;
                 background-image: linear-gradient(to right, $theme-color-blue, $theme-color-green);
+                p {
+                    position: relative;
+                    right: .2667rem;
+                }
             }
 
-            .fir::after {
-                position: absolute;
-                left: 100%;
-                top: 0;
-                content: '';
-                border-top: .7433rem solid $theme-color-green;
-                border-left: .74333rem solid $theme-color-green;
-                border-right: .7433rem solid transparent;
-                border-bottom: .7433rem solid transparent;
-            }
+            // .fir::after {
+            //     position: absolute;
+            //     left: 100%;
+            //     top: 0;
+            //     height: 100%;
+            //     content: '';
+            //     // border-top: .7433rem solid $theme-color-green;
+            //     // border-left: .74333rem solid $theme-color-green;
+            //     // border-right: .7433rem solid transparent;
+            //     // border-bottom: .7433rem solid transparent;
+            //     width: .7433rem;
+            //     background-color: $theme-color-green;
+            //     @include clip-path;
+            // }
 
             .ca-header-item {
                 flex: 1;
@@ -436,6 +445,7 @@ onMounted(() => {
             padding-left: .6667rem;
             position: relative;
             background-color: white;
+
             .circle {
                 position: absolute;
                 right: 100%;
@@ -448,26 +458,31 @@ onMounted(() => {
                 z-index: -1;
                 background: linear-gradient($theme-color-green, $theme-color-blue);
             }
+
             .last {
                 flex: 1.3 !important;
                 position: relative;
                 scale: 1.2;
                 left: 0.1667rem;
                 align-items: center !important;
-                ;
+                @include clip-path-right;
                 background-image: linear-gradient(to right, $theme-color-blue, $theme-color-green);
+                p {
+                    position: relative;
+                    left: .2667rem;
+                }
             }
 
-            .last::before {
-                content: '';
-                position: absolute;
-                right: 100%;
-                top: 0;
-                border-top: .7433rem solid $theme-color-blue;
-                border-left: .74333rem solid transparent;
-                border-right: .7433rem solid $theme-color-blue;
-                border-bottom: .7433rem solid transparent;
-            }
+            // .last::before {
+            //     content: '';
+            //     position: absolute;
+            //     right: 100%;
+            //     top: 0;
+            //     border-top: .7433rem solid $theme-color-blue;
+            //     border-left: .74333rem solid transparent;
+            //     border-right: .7433rem solid $theme-color-blue;
+            //     border-bottom: .7433rem solid transparent;
+            // }
 
             .ch-header-item {
                 height: 100%;
@@ -486,6 +501,7 @@ onMounted(() => {
                     align-items: center;
                     transform: translateY(35%);
                     @include linear-txt;
+
                     span {
                         font-size: .5rem;
                         transform: translateY(-10%);

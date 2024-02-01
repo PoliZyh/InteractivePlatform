@@ -134,7 +134,7 @@ onMounted(() => {
     .f-c {
         --i: 0s;
         position: absolute;
-        animation: move 2s ease-in-out infinite;
+        animation: move calc(2s + var(--i) * 1.1) ease infinite;
         animation-delay: var(--i);
     }
     @keyframes move {
@@ -142,8 +142,8 @@ onMounted(() => {
             transform: translate(0, 0);
         }
 
-        25% {
-            transform: translate(0, .0867rem);
+        50% {
+            transform: translate(.0467rem, .0867rem);
         }
         100% {
             transform: translate(0, 0);
