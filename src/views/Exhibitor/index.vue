@@ -1,11 +1,12 @@
 <template>
     <div class="exhibitor-page">
-        <h1>展商风采</h1>
+        <Screen></Screen>
     </div>
 </template>
 
 
 <script setup>
+import Screen from './components/Screen.vue';
 
 </script>
 
