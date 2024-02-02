@@ -29,7 +29,7 @@ const initWOW = () => {
 }
 const vantaEffect = ref()
 const vantaRef = ref()
-const { curStrs, startCoding, destroyCoding } = useCoding('带您云游数字展馆')
+const { curStrs, startCoding, destroyCoding } = useCoding('展商风采——带您云游数字展馆')
 
 const initVanta = () => {
     vantaEffect.value = clouds({
