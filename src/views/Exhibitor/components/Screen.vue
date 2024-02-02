@@ -5,7 +5,9 @@
             <span class="wow fadeInDown">&</span>
             <span class="wow fadeInRight">AR展厅</span>
         </h1>
-        <h1 class="title_2 wow fadeInUp">带您云游展商风采</h1>
+        <h1 class="title_2 wow fadeInUp">
+            <span v-for="item in curStrs">{{ item }}</span>
+        </h1>
     </div>
 </template>
 
@@ -14,6 +16,7 @@
 import clouds from 'vanta/dist/vanta.clouds.min'
 import { onMounted, onUnmounted, ref } from 'vue';
 import WOW from 'wow.js'
+import { useCoding } from '@/hooks/useCoding'
 
 const initWOW = () => {
     const wow = new WOW({
@@ -26,6 +29,7 @@ const initWOW = () => {
 }
 const vantaEffect = ref()
 const vantaRef = ref()
+const { curStrs, startCoding, destroyCoding } = useCoding('带您云游数字展馆')
 
 const initVanta = () => {
     vantaEffect.value = clouds({
@@ -45,6 +49,7 @@ const initVanta = () => {
 onMounted(() => {
     initVanta()
     initWOW()
+    startCoding()
 })
 
 onUnmounted(() => {
