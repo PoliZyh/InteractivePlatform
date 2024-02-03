@@ -65,6 +65,7 @@ onUnmounted(() => {
 .screen-box {
     width: 100%;
     height: calc(100vh - $layout-header-height);
+    min-height: 10rem;
     color: white;
     display: flex;
     flex-direction: column;

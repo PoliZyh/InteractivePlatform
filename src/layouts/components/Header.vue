@@ -45,7 +45,7 @@ onMounted(() => {
     border-bottom: .0167rem solid $layout-border-color;
     font-size: .25rem;
     position: fixed;
-    z-index: 1000;
+    z-index: 10000;
     background-color: white;
     .header__row {
         width: 80%;

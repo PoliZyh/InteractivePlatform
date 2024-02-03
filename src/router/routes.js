@@ -23,14 +23,6 @@ export const constantRoutes = [
                 }
             },
             // {
-            //     path: 'about',
-            //     name: 'about',
-            //     component: () => import('@/views/About/index.vue'),
-            //     meta: {
-            //         title: '关于大会'
-            //     }
-            // },
-            // {
             //     path: 'experts',
             //     name: 'experts',
             //     component: () => import('@/views/Experts/index.vue'),
@@ -102,6 +94,11 @@ export const constantRoutes = [
                 path: 'clock-in-hand',
                 name: 'clock-in-hand',
                 component: () => import('@/views/ClockIn/HandTrack.vue')
+            },
+            {
+                path: 'ar-e',
+                name: 'ar-e',
+                component: () => import('@/views/ArExhibitor/index.vue')
             }
         ]
     }
