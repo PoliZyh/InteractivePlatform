@@ -23,19 +23,39 @@
                 <p>White Paper</p>
             </div>
             <div class="card">
-                <CardItem
-                class="ci wow fadeInUp"
-                v-for="(item, index) in data" 
-                :key="item.bgUrl"
-                :reverse="index % 2 == 1"
-                :card-data="item"
-                ></CardItem>
+                <CardItem class="ci wow fadeInUp" v-for="(item, index) in data" :key="item.bgUrl" :reverse="index % 2 == 1"
+                    :card-data="item"></CardItem>
             </div>
         </div>
         <div class="new-product a-p-item">
             <div class="title wow fadeInUp">
                 <p>新品发布</p>
                 <p>New Product Launch</p>
+            </div>
+            <div class="new-cards">
+                <div v-for="(item, index) in newData"
+                :key="item.bgUrl"
+                class="wow fadeInUp"
+                :data-wow-delay="index * 0.2 + 's'"
+                >
+                    <NewCard :title="item.title"
+                    :bg-url="item.bgUrl"
+                    :content="item.content"></NewCard>
+                </div>
+
+            </div>
+        </div>
+        <div class="bk a-p-item">
+            <div class="title wow fadeInUp">
+                <p>书籍</p>
+                <p>Books</p>
+            </div>
+            <div class="books">
+                <div v-for="item in bookData"
+                :key="item.bgUrl"
+                class="wow fadeInUp">
+                    <Book :bk-data="item"></Book>
+                </div>
             </div>
         </div>
     </div>
@@ -44,8 +64,10 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-import WOW from 'wow.js'
+import WOW from 'wow.js';
+import Book from './components/Book.vue';
 import CardItem from './components/CardItem.vue';
+import NewCard from './components/NewCard.vue';
 
 const data = ref([
     {
@@ -65,6 +87,27 @@ const data = ref([
         enTitle: 'Anheng Information 2023 Industry Solution Blue Book (6 books in total)',
         chTitle: '安恒信息2023年行业解决方案蓝皮书（全6本）',
         content: '数字安全是未来数字化发展的重要组成部分，立足数字安全建设。备预不虞，为国常道，安恒信息结合多年网络安全、数据安全经验以及对行业发展趋势的理解和把握，安恒信息首次发布六大行业解决方案蓝皮书，全面介绍网信、公安、运营商、金融、教育、交通六大行业中的解决方案最佳实践，为产业数字化发展指明了方向，全面加速推动经济社会全面发展。'
+    }
+])
+
+const newData = ref([
+    {
+        bgUrl: 'https://obs-xhlj.obs.cn-east-3.myhuaweicloud.com/2023/5/bf77ef3740464bd38b383633d30831a6.jpg',
+        title: '下一代防火墙',
+        content: '明御防火墙（DAS-TGFW）秉持“持续边界安全态势改善”的理念，以用户为核心，以边界、应用、威胁、权限为防护对象，构建了以资产为视角的可持续智能安全运营防护体系。是集传统防火墙、入侵防御、防病毒、上网行为管控、VPN、威胁情报等安全模块于一身，同时可联合态势感知、EDR等产品进行一体化建设的智能安全网关。'
+    },
+    {
+        bgUrl: 'https://obs-xhlj.obs.cn-east-3.myhuaweicloud.com/2023/5/500e36be359f492ab623b7998263ccc2.jpg',
+        title: '安全托管运营服务MSS',
+        content: '提供体系化、常态化的安全托管服务，协助构建7*24小时全天候、全方位的安全运营体系， 实现安全风险从发现到响应处置的闭环，持续不断提高网络安全水平'
+    }
+])
+
+const bookData = ref([
+    {
+        bgUrl: 'https://obs-xhlj.obs.cn-east-3.myhuaweicloud.com/2023/4/cd902015f99246108a0615d4668f5d0d.png',
+        title: '《数据安全与隐私计算》',
+        content: '本书首先介绍了业内多个具备代表性的数据安全理论及实践框架，从数 据常见风险出发，引出数据安全保护最佳实践，然后介绍了数字经济时代数据要素市场的基本信息，基于构建数据要素市场、促进数据合规安全流通，释放数据价值等场景中的实践，抽象并总结了一套数据要素可信、安全、合 规流通的体系架构，包括数据安全保护技术与保护数据价值释放的隐私计算 技术，最后针对政务、金融、电力能源、公安行业等重点行业，分析了数据 安全与数据孤岛现象的根本原因，介绍了数据安全实践案例，以及如何通过 部署数据要素流通体系架构，打破“数据壁垒”，促进多方数据融合计算的实践案例。 本书可以作为高校学生、隐私计算技术从业者、数据要素市场从业者、 数据安全行业从业者的入门读物，也可作为相关机构或组织进行数据要素市 场流通体系建设实践的参考指南。'
     }
 ])
 
@@ -88,6 +131,7 @@ onMounted(() => {
 <style scoped lang="scss">
 .achievement-page {
     width: 100%;
+
     .ci {
         padding: .5333rem 0;
         border-bottom: 1px solid rgb(229, 229, 229);
@@ -96,6 +140,7 @@ onMounted(() => {
 
     .a-p-item {
         padding: 1rem .5rem;
+
         .card {
             width: 100%;
             margin-top: .6667rem;
@@ -117,6 +162,21 @@ onMounted(() => {
                 margin-top: .2333rem;
                 font-size: .2rem;
             }
+        }
+    }
+
+    .new-product {
+        .new-cards {
+            width: 100%;
+            margin-top: .5rem;
+            display: flex;
+            gap: .5rem;
+        }
+    }
+    .bk {
+        .books {
+            width: 80%;
+            margin: .6667rem auto;
         }
     }
 
