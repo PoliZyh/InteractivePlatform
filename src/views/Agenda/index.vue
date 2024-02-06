@@ -10,6 +10,7 @@
                     @mouseleave="data.forEach(i => i.isExpand = false)" 
                     :key="item.title"
                     :data-wow-delay="index / 10 + 's'"
+                    @click="handleRouter"
                     >
                     <div class="time">
                         {{ item.date }}
@@ -38,6 +39,9 @@
 import { onMounted, ref } from 'vue';
 import Screen from './components/Screen.vue';
 import WOW from 'wow.js'
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
 
 const initWOW = () => {
     const wow = new WOW({
@@ -47,6 +51,10 @@ const initWOW = () => {
         mobile: true
     })
     wow.init();
+}
+
+const handleRouter = () => {
+    router.push('/lay/agenda-live')
 }
 
 onMounted(() => {

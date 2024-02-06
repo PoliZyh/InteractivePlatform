@@ -55,13 +55,21 @@ export const constantRoutes = [
                 }
             },
             {
-                path: 'media',
-                name: 'media',
-                component: () => import('@/views/Media/index.vue'),
+                path: 'cls',
+                name: 'cls',
+                component: () => import('@/views/CLS/index.vue'),
                 meta: {
-                    title: '媒体中心'
+                    title: '数潜影'
                 }
-            },
+            }
+            // {
+            //     path: 'media',
+            //     name: 'media',
+            //     component: () => import('@/views/Media/index.vue'),
+            //     meta: {
+            //         title: '媒体中心'
+            //     }
+            // },
             // {
             //     path: 'guide',
             //     name: 'guide',
@@ -70,14 +78,14 @@ export const constantRoutes = [
             //         title: '参会指南'
             //     }
             // },
-            {
-                path: 'live',
-                name: 'live',
-                component: () => import('@/views/Live/index.vue'),
-                meta: {
-                    title: '大会直播'
-                }
-            }
+            // {
+            //     path: 'live',
+            //     name: 'live',
+            //     component: () => import('@/views/Live/index.vue'),
+            //     meta: {
+            //         title: '大会直播'
+            //     }
+            // }
         ]
     },
     {
@@ -99,6 +107,11 @@ export const constantRoutes = [
                 path: 'ar-e',
                 name: 'ar-e',
                 component: () => import('@/views/ArExhibitor/index.vue')
+            },
+            {
+                path: 'agenda-live',
+                name: 'agenda-live',
+                component: () => import('@/views/AgendaLive/index.vue')
             }
         ]
     }
