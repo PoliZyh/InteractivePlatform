@@ -2,6 +2,7 @@
     <div class="agenda-live">
         <div class="l-bg">
             <Live></Live>
+            <Ppt></Ppt>
         </div>
     </div>
 </template>
@@ -9,7 +10,7 @@
 
 <script setup>
 import Live from './components/Live.vue';
-
+import Ppt from './components/Ppt.vue';
 
 </script>
 

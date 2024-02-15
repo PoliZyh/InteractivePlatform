@@ -28,15 +28,52 @@
             </div>
         </div>
         <div class="live-r">
-            <div class="title"></div>
-            <div class="content"></div>
+            <div class="title">
+                <span>会议议程</span>
+            </div>
+            <div class="content">
+                <Progress :data="progressData"></Progress>
+            </div>
         </div>
     </div>
 </template>
 
 
 <script setup>
+import Progress from '@/components/Progress.vue'
+import { ref } from 'vue';
 
+const progressData = ref([
+    {
+        time: '13:30 - 13:35',
+        title: '致辞',
+        content: '邬韶杭&nbsp;&nbsp;&nbsp;浙江省经济和信息化厅软件与集成电路产业处 处长'
+    },
+    {
+        time: '13:35 - 13:40',
+        title: '主题介绍',
+    },
+    {
+        time: '13:40 - 14:00',
+        title: '主题演讲：《软件供应链安全挑战及治理探索》',
+        content: '赵相楠&nbsp;&nbsp;&nbsp;中国信息通信研究院安全研究所网络安全检测评估中心主任'
+    },
+    {
+        time: '14:00 - 14:20',
+        title: '主题演讲：《金融业开源软件供应链安全管控与实践》',
+        content: '孙钢&nbsp;&nbsp;&nbsp;浙江省网络空间安全协会软件供应链安全专家委员会 浙商银行安全研究专家'
+    },
+    {
+        time: '14:20 - 14:40',
+        title: '主题演讲：《软件供应链安全的现状分析及对策治理》',
+        content: '温智超&nbsp;&nbsp;&nbsp;财通证券股份有限公司 金融科技研发部副总经理'
+    },
+    {
+        time: '14:40 - 15:00',
+        title: '主题演讲：《构建安全可信的软件供应链体系，打造全栈技术自主可控的国产数智云底座》',
+        content: '宋国欢&nbsp;&nbsp;&nbsp;曙光信息产业股份有限公司云计算产品事业部 副总经理'
+    }
+])
 </script>
 
 
@@ -113,19 +150,25 @@
     .live-r {
         width: 4rem;
         height: 70%;
-        background-color: blue;
         display: flex;
         flex-direction: column;
         gap: .6667rem;
 
         .title {
-            flex: 1.2;
-            background-color: white;
+            flex: 0.9;
+            background: linear-gradient(to right, $theme-color-blue, $theme-color-green);
+            color: white;
+            font-size: 0.35rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .content {
+            padding: .3333rem;
             flex: 8;
             background-color: white;
+            overflow: scroll;
         }
     }
 }</style>
