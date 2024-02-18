@@ -1,6 +1,6 @@
 <template>
     <div class="hand-track-box">
-        <div class="box">
+        <div class="box" ref="boxRef">
             <video style="width: 600px; height: 500px;"  ref="videoRef" autoplay muted @play="handlePlay"></video>
             <canvas ref="cn"></canvas>
             <img :src="LOGO_PATH" alt="" 
@@ -10,6 +10,7 @@
                 top: handPosition[1] + handPosition[3] / 2 + 'px',
             }">
         </div>
+        <button class="btn" @click="handleClockIn">点我打卡</button>
     </div>
 </template>
 
@@ -17,14 +18,20 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 // import * as handTrack from 'handtrackjs';
+import { downloadPicture } from '../../utils/html2png';
 
 const videoRef = ref(null);
 const cn = ref(null);
 const LOGO_PATH = '/logo.png'
+const boxRef = ref(null);
 let handPosition = ref(null);
-
 let model;
 let ctx
+
+
+const handleClockIn = async () => {
+    await downloadPicture(boxRef.value)
+}
 
 navigator.mediaDevices.getUserMedia = 
     navigator.mediaDevices.getUserMedia ||
@@ -94,6 +101,24 @@ onMounted(async () => {
     justify-content: center;
     align-self: center;
     position: relative;
+    min-height: 100vh;
+    background-image: url(https://www.gcsis.cn/img/live_bg.jpg);
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 9vh;
+    .btn {
+        position: absolute;
+        background: linear-gradient(to right, $theme-color-blue, $theme-color-green);
+        color: white;
+        border: none;
+        padding: .1667rem .3333rem;
+        border-radius: .1167rem;
+        bottom: 20vh;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+    }
     .box {
         width: 600px;
         height: 500px;

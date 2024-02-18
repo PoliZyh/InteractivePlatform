@@ -4,6 +4,7 @@
         <div class="box">
             <video style="width: 600px; height: 500px;"  src="" ref="videoRef" autoplay muted @play="handlePlay"></video>
         </div>
+        <button class="btn">点我打卡</button>
     </div>
 </template>
 
@@ -115,6 +116,22 @@ onMounted(async () => {
     justify-content: center;
     align-self: center;
     position: relative;
+    background-image: url(https://www.gcsis.cn/img/live_bg.jpg);
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 9vh;
+    .btn {
+        position: absolute;
+        background: linear-gradient(to right, $theme-color-blue, $theme-color-green);
+        color: white;
+        border: none;
+        padding: .1667rem .3333rem;
+        border-radius: .1167rem;
+        bottom: 20vh;
+        left: 50%;
+        cursor: pointer;
+    }
     .box {
         width: 600px;
         height: 500px;
