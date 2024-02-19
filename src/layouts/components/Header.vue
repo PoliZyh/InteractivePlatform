@@ -4,15 +4,15 @@
             <img src="../../assets/images/logo.png" alt="">
             <div class="navs">
                 <nav>
-                    <div class="nav-item" 
-                    v-for="route in constantRoutes[0].children"
-                    :key="route.path"
-                    @click="handleRouter(route.name)">
-                    {{ route.meta.title }}
+                    <div class="nav-item" v-for="route in constantRoutes[0].children" :key="route.path"
+                        @click="handleRouter(route.name)">
+                        {{ route.meta.title }}
                     </div>
                 </nav>
+                <div class="login" @click="userStore.openLoginBox">登录 ｜ 注册</div>
             </div>
         </div>
+        <LoginBox></LoginBox>
     </div>
 </template>
 
@@ -22,12 +22,15 @@
 import { onMounted } from 'vue';
 import { constantRoutes } from '../../router/routes';
 import { useRouter } from 'vue-router';
+import LoginBox from '../../components/LoginBox.vue';
+import useUserStore from '@/store/modules/useUserStore'
 
+const userStore = useUserStore()
 const router = useRouter()
 
 
 const handleRouter = (name) => {
-    router.push({name})
+    router.push({ name })
 }
 
 
@@ -47,6 +50,7 @@ onMounted(() => {
     position: fixed;
     z-index: 10000;
     background-color: white;
+
     .header__row {
         width: 80%;
         height: 100%;
@@ -55,23 +59,38 @@ onMounted(() => {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
         img {
             height: 80%;
         }
+
         .navs {
             height: 100%;
             display: flex;
             align-items: center;
+
             nav {
                 display: flex;
                 font-size: 0.2rem;
                 height: 100%;
+
                 .nav-item {
                     padding: 0 .167rem;
                     cursor: pointer;
                     display: flex;
                     align-items: center;
                 }
+            }
+        }
+
+        .login {
+            font-size: 0.19rem;
+            margin-left: .5rem;
+            color: rgba(137, 137, 137, 0.798);
+            cursor: pointer;
+            transition: all .3s;
+            &:hover {
+                color: grey;
             }
         }
     }
