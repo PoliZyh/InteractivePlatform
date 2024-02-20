@@ -12,7 +12,7 @@
                             <p class="send" @click="sendCode">{{ codeStr }}</p>
                         </div>
                     </div>
-                    <button class="btn">注册登录</button>
+                    <button class="btn" @click="handleLogin">注册登录</button>
                     <p class="agr">注册即代表阅读并同意<span>服务条款、隐私政策</span></p>
                 </div>
                 <div class="l-r l-item">
@@ -39,6 +39,11 @@ const timer = ref(60)
 
 const handleClose = () => {
     userStore.closeLoginBox()
+}
+
+const handleLogin = () => {
+    userStore.login()
+    handleClose()
 }
 
 const codeStr = computed(() => {

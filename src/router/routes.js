@@ -112,6 +112,11 @@ export const constantRoutes = [
                 path: 'agenda-live',
                 name: 'agenda-live',
                 component: () => import('@/views/AgendaLive/index.vue')
+            },
+            {
+                path: 'user-info',
+                name: 'user-info',
+                component: () => import('@/views/User/index.vue')
             }
         ]
     }

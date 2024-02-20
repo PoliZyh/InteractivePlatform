@@ -9,7 +9,13 @@
                         {{ route.meta.title }}
                     </div>
                 </nav>
-                <div class="login" @click="userStore.openLoginBox">登录 ｜ 注册</div>
+                <div class="login" >
+                    <span @click="userStore.openLoginBox"
+                    v-if="!userStore.isLogin">登录 ｜ 注册</span>
+                    <span v-else
+                    @click="handleRouter('user-info')"
+                    >个人信息 | 退出</span>
+                </div>
             </div>
         </div>
         <LoginBox></LoginBox>

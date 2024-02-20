@@ -12,6 +12,9 @@ const useUserStore = defineStore('user', {
         },
         closeLoginBox() {
             this.onLogining = false
+        },
+        login() {
+            this.isLogin = true
         }
     }
 })
