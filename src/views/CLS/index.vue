@@ -2,7 +2,7 @@
     <div class="cls">
         <div class="cls-l">
             <h2 class="wow fadeInUp">Try Me?</h2>
-            <h2 class="wow fadeInUp" style="font-weight: 0.8rem; margin: .3333rem 2rem;">Here!</h2>
+            <h2 class="wow fadeInUp" style="font-weight: 0.8rem; margin: .3333rem 2rem;" @click="router.push({name: 'cls-live'})">Here!</h2>
         </div>
         <div class="cls-r wow fadeInRight" >
             <h4 class="wow fadeInUp" data-wow-delay="1s">Why not 数潜影?</h4>
@@ -16,6 +16,9 @@
 import { onMounted } from 'vue';
 import Man from './components/Man.vue'
 import WOW from 'wow.js'
+import {useRouter} from 'vue-router'
+
+const router = useRouter()
 
 const initWOW = () => {
     const wow = new WOW({

@@ -1,0 +1,11 @@
+Model Information:
+* title:	[Blue Archive] Plana
+* source:	https://sketchfab.com/3d-models/blue-archive-plana-229d30a9e15e44d680444090526967ac
+* author:	Free3Diz (https://sketchfab.com/Free3Diz)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "[Blue Archive] Plana" (https://sketchfab.com/3d-models/blue-archive-plana-229d30a9e15e44d680444090526967ac) by Free3Diz (https://sketchfab.com/Free3Diz) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -117,6 +117,11 @@ export const constantRoutes = [
                 path: 'user-info',
                 name: 'user-info',
                 component: () => import('@/views/User/index.vue')
+            },
+            {
+                path: 'cls-live',
+                name: 'cls-live',
+                component: () => import('@/views/ClsLive/index.vue')
             }
         ]
     }
